@@ -1,15 +1,28 @@
-import logo from './images/logo.jpg';
-import background from './images/background.jpg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Drinks from "./pages/Drinks";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div className="App" styles={{ backgroundImage:`url(${background})`}}>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Welcome to Gigi's Drink Station App</h1>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path={["/", "/drinks"]}>
+            <Drinks />
+          </Route>
+          <Route exact path="/drinks/:id">
+            <Detail />
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
