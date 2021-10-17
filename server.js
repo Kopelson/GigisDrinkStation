@@ -24,7 +24,16 @@ app.use(function(req, res, next) {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/drinklist");
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/drinkslist",
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Start the API server
 app.listen(PORT, function() {
