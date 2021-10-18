@@ -1,12 +1,8 @@
 
 .create-btn {
-    float: right;
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+    background-color: #dfc4f7;
+    color: #515d75;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+    padding: 5px 15px;
+    margin-bottom: 5px;
+}

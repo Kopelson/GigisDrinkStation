@@ -5,9 +5,9 @@ import "./style.css";
 // That way we don't have to define them all individually
 function CreateBtn() {
   return (
-    <span className="create-btn" role="button" tabIndex="0">
-      Create New Drink
-    </span>
+    <div className="create-btn" role="button" tabIndex="0" >
+      <strong>Add New Drink</strong>
+    </div>
   );
 }
 

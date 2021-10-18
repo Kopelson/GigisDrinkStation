@@ -7,7 +7,7 @@ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 
 import { Input, TextArea, FormBtn } from "../components/Form";
-import CancelBtn from "../components/CancelBtn";
+
 
 
 
@@ -42,10 +42,7 @@ function Create() {
         <Row>
           <Col size="sm-12">
             <Jumbotron>
-              <h1>What Drink Should I Make?</h1>
-              <Link to={"/"}>
-                <CancelBtn />
-              </Link>
+              <h1>New Drink Form</h1>
             </Jumbotron>
             <form>
               <Input
@@ -72,6 +69,7 @@ function Create() {
             </form>
           </Col>
           </Row>
+          <Link to="/">← Back to Drink Station</Link>
       </Container>
     );
   }

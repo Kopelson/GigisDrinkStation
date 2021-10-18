@@ -1,13 +1,17 @@
 import React from "react";
-import logo from "../../images/logo.jpg";
+import "./style.css";
+import logo from "../../images/logo.png";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg">
-      <a className="navbar-brand mx-auto" href="/">
-      <img src={logo}  alt="Gigi's Drink Station" />
-      </a>
-    </nav>
+    <div>
+      <nav className="navbar navbar-expand-lg d-flex justify-content-center">
+        <a className="navbar-brand" href="/">
+          <img src={logo}  alt="Gigi's Drink Station" />
+        </a>
+      </nav>
+    </div>
+    
   );
 }
 

@@ -1,9 +1,11 @@
 .cancel-btn {
-    float: right;
-    background-color: #e74944;
+    
+    background-color: #dfc4f7;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: #515d75;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

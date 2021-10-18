@@ -7,7 +7,6 @@ import API from "../utils/API";
 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import DeleteBtn from "../components/DeleteBtn";
-import EditBtn from "../components/EditBtn";
 
 
 function Detail() {
@@ -32,29 +31,21 @@ function Detail() {
               <h1>
                 {drink.title}
               </h1>
-              <h2>
+              <p>
                 by {drink.author}
-              </h2>
-              <h3>{formatDateCreated}</h3>
+              </p>
+              <p>{formatDateCreated}</p>
+              <h2>Ingredients:</h2>
+              <p>
+                {drink.ingredients}
+              </p>
+              <DeleteBtn id={drink._id} />
             </Jumbotron>
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>How to Make</h1>
-              <p>
-                {drink.ingredients}
-              </p>
-              
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <Link to="/">← Back to Drink Station</Link>
-            <EditBtn />
-            <DeleteBtn id={drink._id} />
+          <Col size="md-12 d-flex justify-content-between">
+            <Link className="text-white" to="/">← Back to Drink Station</Link>
           </Col>
         </Row>
       </Container>
