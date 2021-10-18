@@ -1,10 +1,11 @@
 import React from "react";
+import logo from "../../images/logo.jpg";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        Gigi's Drink Station
+    <nav className="navbar navbar-expand-lg">
+      <a className="navbar-brand mx-auto" href="/">
+      <img src={logo}  alt="Gigi's Drink Station" />
       </a>
     </nav>
   );
