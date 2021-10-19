@@ -1,3 +1,15 @@
 body {
     background-color: #515d75;
 }
+
+/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
+.btn-primary {
+    color: #fff !important;
+    background-color: #0495c9 !important;
+    border-color: #357ebd !important; /*set the color you want here*/
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff !important;
+    background-color: #00b3db !important;
+    border-color: #285e8e !important; /*set the color you want here*/
+}

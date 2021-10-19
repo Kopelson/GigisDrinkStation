@@ -69,7 +69,7 @@ function Create() {
             </form>
           </Col>
           </Row>
-          <Link to="/">← Back to Drink Station</Link>
+          <Link className="text-white" to="/">← Back to Drink Station</Link>
       </Container>
     );
   }
