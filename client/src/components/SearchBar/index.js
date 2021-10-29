@@ -7,7 +7,7 @@ function SearchBar(props) {
       <div className="search-bar">
           <form className="form-inline">
           <input
-            className="form-control form-control-md col-8"
+            className="form-control form-control-md col-9"
             type="search"
             placeholder="Find a drink!"
             aria-label="Search"
@@ -16,7 +16,7 @@ function SearchBar(props) {
             onChange={props.handleChange}
           />
           <button 
-          className="btn col-4" 
+          className="btn btn-primary text-success col-3" 
           type="submit"
           onClick={props.handleSubmit}>
             Search

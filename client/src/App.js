@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Drinks from "./pages/Drinks";
 import Detail from "./pages/Detail";

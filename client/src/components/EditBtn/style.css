@@ -1,9 +1,8 @@
-.cancel-btn {
-    
-    background-color: #dfc4f7;
+.edit-btn {
+    background-color: #4898FA;
     border: none;
-  
-    padding: 5px 10px;
+    color: white;
+    padding: 15px 32px;
     margin: 10px;
     border-radius: 5px;
     text-align: center;

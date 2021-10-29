@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import SearchBar from "../components/SearchBar";
-import CreateBtn from "../components/CreateBtn";
+import Jumbotron from "../components/Jumbotron";
 function Drinks() {
   // Setting our component's initial state
   const [drinks, setDrinks] = useState([])
@@ -52,12 +52,15 @@ function Drinks() {
 
     return (
       <Container fluid>
-         <Link to={"/create"}>
-              <CreateBtn />
-        </Link>
         <Row>
           <Col size="sm-12">
-            <SearchBar value={search.value} handleChange={handleChange} handleSubmit={handleSubmit}/>
+           
+                <div className="btn btn-primary col-12">
+                  <Link to={"/create"}>
+                    Add New Drink →
+                  </Link>
+                </div>  
+                <SearchBar value={search.value} handleChange={handleChange} handleSubmit={handleSubmit}/>
             {tableResults.length ? (
               <List>
                 {tableResults.map(drink => (
@@ -74,7 +77,9 @@ function Drinks() {
                 ))}
               </List>
             ) : (
+              <Jumbotron>
               <h3>No Results to Display</h3>
+              </Jumbotron>
             )}
           </Col>
         </Row>

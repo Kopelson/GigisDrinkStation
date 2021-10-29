@@ -7,6 +7,7 @@ import API from "../utils/API";
 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import DeleteBtn from "../components/DeleteBtn";
+import EditBtn from "../components/EditBtn";
 
 
 function Detail() {
@@ -28,9 +29,7 @@ function Detail() {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>
-                {drink.title}
-              </h1>
+              <h1>{drink.title}</h1>
               <p>
                 by {drink.author}
               </p>
@@ -39,13 +38,20 @@ function Detail() {
               <p>
                 {drink.ingredients}
               </p>
-              <DeleteBtn id={drink._id} />
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <EditBtn className="btn btn-primary me-md-2" type="button">Button</EditBtn>
+                <DeleteBtn className="btn btn-primary " type="button" id={drink._id}>Button</DeleteBtn>
+              </div>
             </Jumbotron>
+            
           </Col>
         </Row>
         <Row>
           <Col size="md-12 d-flex justify-content-between">
-            <Link className="text-white" to="/">← Back to Drink Station</Link>
+            <div className="btn btn-primary">
+
+            <Link to="/">← Back to Drink Station</Link>
+            </div>
           </Col>
         </Row>
       </Container>
