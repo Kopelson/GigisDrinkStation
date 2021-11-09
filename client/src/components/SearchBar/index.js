@@ -16,7 +16,7 @@ function SearchBar(props) {
             onChange={props.handleChange}
           />
           <button 
-          className="btn btn-primary text-success col-3" 
+          className="btn btn-primary text-dark col-3" 
           type="submit"
           onClick={props.handleSubmit}>
             Search

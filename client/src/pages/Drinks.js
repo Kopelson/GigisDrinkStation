@@ -54,13 +54,11 @@ function Drinks() {
       <Container fluid>
         <Row>
           <Col size="sm-12">
-           
-                <div className="btn btn-primary col-12">
-                  <Link to={"/create"}>
-                    Add New Drink →
-                  </Link>
-                </div>  
-                <SearchBar value={search.value} handleChange={handleChange} handleSubmit={handleSubmit}/>
+            <Link className="btn btn-primary text-dark col-12" to={"/create"}>
+              Add New Drink →
+            </Link>
+            
+            <SearchBar value={search.value} handleChange={handleChange} handleSubmit={handleSubmit}/>
             {tableResults.length ? (
               <List>
                 {tableResults.map(drink => (

@@ -42,7 +42,7 @@ function Create() {
         <Row>
           <Col size="sm-12">
             <Jumbotron>
-              <h1>New Drink Form</h1>
+              <h1>Create A Drink:</h1>
             </Jumbotron>
             <form>
               <Input
@@ -64,12 +64,12 @@ function Create() {
                 disabled={!(formObject.author && formObject.title) && formObject.ingredients}
                 onClick={handleFormSubmit}
               >
-                Submit Drink
+                Submit
               </FormBtn>
             </form>
           </Col>
           </Row>
-          <Link className="text-white" to="/">← Back to Drink Station</Link>
+          <Link className="text-white" to="/" >← Back to Drink Station</Link>
       </Container>
     );
   }
