@@ -64,12 +64,12 @@ function Drinks() {
                 {tableResults.map(drink => (
                   <ListItem key={drink._id}>
                     <Link to={"/drinks/" + drink._id}>
-                      <h1>
+                      <h1 className="text-dark">
                         {drink.title} 
                       </h1>
                     </Link>
-                      <p>by {drink.author}</p>
-                      <p>({drink.ingredients})</p>
+                      <p className="text-dark">by {drink.author}</p>
+                      <p className="text-dark">({drink.ingredients})</p>
                     
                   </ListItem>
                 ))}
