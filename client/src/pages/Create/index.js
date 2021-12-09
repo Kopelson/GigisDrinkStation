@@ -57,14 +57,14 @@ function Create() {
               <Button
                 disabled={!(formObject.author && formObject.title) && formObject.ingredients}
                 onClick={handleFormSubmit}
-                style={{width:"100%"}}
+                style={{width:"100%", fontSize:"24px"}}
               >
               <i className="far fa-save"></i>
               </Button>
               
               <Link to="/">
               <Button
-                style={{width:"100%"}}
+                style={{width:"100%",fontSize:"24px"}}
               >
                 ← Back to Drink Station
               </Button>
