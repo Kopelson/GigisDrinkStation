@@ -24,7 +24,6 @@ app.use(function(req, res, next) {
 app.use(routes);
 
 // Connect to the Mongo DB
-// Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/drinkslist",
   {

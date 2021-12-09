@@ -10,11 +10,15 @@ export default {
     return axios.get("/api/drinks/" + id);
   },
   // Deletes the drink with the given id
-  deletedrink: function(id) {
+  deleteDrink: function(id) {
     return axios.delete("/api/drinks/" + id);
   },
   // Saves a drink to the database
-  savedrink: function(drinkData) {
+  saveDrink: function(drinkData) {
     return axios.post("/api/drinks", drinkData);
-  }
+  },
+  // Updates a drink by id
+  updateDrink: function (id, drinkData) {
+    return axios.put("/api/drinks/" + id, drinkData);
+  },
 };

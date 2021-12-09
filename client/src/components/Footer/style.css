@@ -1,4 +1,8 @@
-small {
+.footer {
     text-align: center;
-    color: #dfc4f7
+    position:fixed;
+    bottom: 0;
+    background-color: #ad95be;
+    color: #525f77;
+    z-index:5;
 }

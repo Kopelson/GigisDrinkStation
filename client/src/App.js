@@ -1,11 +1,10 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Drinks from "./pages/Drinks";
-import Detail from "./pages/Detail";
-import Create from "./pages/Create";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Drinks from "./pages/Drinks/index";
+import Detail from "./pages/Detail/index";
+import Create from "./pages/Create/index";
+import NoMatch from "./pages/NoMatch/index";
+import Nav from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
