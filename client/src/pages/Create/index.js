@@ -8,7 +8,11 @@ import Button from "../../components/Button";
 import API from "../../utils/API";
 
 function Create() {
-  const [formObject, setFormObject] = useState({});
+  const [formObject, setFormObject] = useState({
+    title: "",
+    author: "",
+    ingredients: ""
+  });
   const history = useHistory();
 
   function handleInputChange(event) {
@@ -35,7 +39,7 @@ function Create() {
           title="Create"
         >
         </Jumbotron>
-        <form className="col-12">
+        <div className="col-12 form">
               <Input
                 onChange={handleInputChange}
                 name="title"
@@ -69,7 +73,7 @@ function Create() {
                 ← Back to Drink Station
               </Button>
               </Link>
-          </form>
+          </div>
      </div>
     );
   }

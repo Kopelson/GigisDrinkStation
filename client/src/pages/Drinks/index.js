@@ -11,17 +11,25 @@ function Drinks() {
   const [drinks, setDrinks] = useState([])
   const [search, setSearch] = useState({value: ""});
 
-  useEffect(() => {
-    loadDrinks()
-  }, [drinks]);
+  // useEffect(() => {
+  //   loadDrinks()
+  // }, [drinks]);
 
-  function loadDrinks() {
-    API.getDrinks()
-      .then(res => 
-        setDrinks(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+  useEffect(() => {
+    let componentMounted = true;
+      const fetchData = async () => {
+      //you async action is here
+      API.getDrinks().then((response) => {
+        if(componentMounted) {
+          setDrinks(response?.data);
+        }
+      })
+      };
+      fetchData();
+      return () => {
+       componentMounted = false;
+      }
+    }, []);
 
   //handles changes in the searchbar
   function handleChange(event) {
@@ -65,7 +73,11 @@ function Drinks() {
               <List>
                 {tableResults.map(drink => (
                   <ListItem key={drink._id}>
-                    <Link to={"/drinks/" + drink._id}>
+                    <Link to={"/drinks/" + drink._id}
+                      title={drink.title}
+                      author={drink.author}
+                      ingredients={drink.ingredients}
+                    >
                       <h1>
                         {drink.title} 
                       </h1>
