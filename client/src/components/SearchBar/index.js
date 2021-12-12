@@ -8,7 +8,7 @@ function SearchBar(props) {
         <input
           className="col-12"
           type="search"
-          placeholder="Find a drink!"
+          placeholder={props.placeholder}
           name="search"
           value={props.value}
           onChange={props.handleChange}

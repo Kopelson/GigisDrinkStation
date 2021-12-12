@@ -11,10 +11,6 @@ function Drinks() {
   const [drinks, setDrinks] = useState([])
   const [search, setSearch] = useState({value: ""});
 
-  // useEffect(() => {
-  //   loadDrinks()
-  // }, [drinks]);
-
   useEffect(() => {
     let componentMounted = true;
       const fetchData = async () => {
@@ -68,6 +64,7 @@ function Drinks() {
         value={search.value}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        placeholder="Find a Drink!"
       ></SearchBar>
       {tableResults.length ? (
               <List>

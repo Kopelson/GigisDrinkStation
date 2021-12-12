@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import Jumbotron from '../../components/Jumbotron';
 import { Link,  useHistory } from "react-router-dom";
-import { Input, TextArea } from "../../components/Form";
+import { Input } from "../../components/Form";
 import Button from "../../components/Button";
-
 import API from "../../utils/API";
 
-function Create() {
+function AddItems() {
   const [formObject, setFormObject] = useState({
-    title: "",
-    author: "",
-    ingredients: ""
+    name: "",
+    quantity: ""
   });
+
   const history = useHistory();
 
   function handleInputChange(event) {
@@ -21,13 +20,12 @@ function Create() {
 
   function handleFormSubmit(event) {
     event.preventDefault()
-      if (formObject.title && formObject.author) {
-        API.saveDrink({
-          title: formObject.title,
-          author: formObject.author,
-          ingredients: formObject.ingredients
+      if (formObject.name && formObject.quantity) {
+        API.saveInventory({
+          name: formObject.name,
+          quantity: formObject.quantity
         })
-        .then(history.push(`/`))
+        .then(history.push(`/inventory`))
         .catch(err => console.log(err));
       };
   };
@@ -35,30 +33,23 @@ function Create() {
     return (
      <div>
        <Jumbotron
-          title="Create"
+          title="Add Item to Inventory"
         >
         </Jumbotron>
         <div className="col-12 form">
               <Input
                 onChange={handleInputChange}
-                name="title"
-                placeholder="Title of Drink"
+                name="name"
+                placeholder="Name of Item"
                
               />
               <Input
                 onChange={handleInputChange}
-                name="author"
-                placeholder="Name of Author"
-              value={formObject.author}
-              />
-              <TextArea
-                onChange={handleInputChange}
-                name="ingredients"
-                placeholder="Ingredients"
-                
+                name="quantity"
+                placeholder="Number of Items"
               />
               <Button
-                disabled={!(formObject.author && formObject.title) && formObject.ingredients}
+                disabled={!(formObject.name && formObject.quantity)}
                 onClick={handleFormSubmit}
                 style={{width:"100%", fontSize:"24px"}}
               >
@@ -77,4 +68,4 @@ function Create() {
     );
   }
 
-export default Create;
+export default AddItems;

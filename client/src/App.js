@@ -6,6 +6,9 @@ import Create from "./pages/Create/index";
 import NoMatch from "./pages/NoMatch/index";
 import Nav from "./components/Header";
 import Footer from "./components/Footer";
+import Inventory from "./pages/Inventory";
+import AddItem from "./pages/AddItems";
+import ItemDetail from "./pages/ItemDetail";
 
 function App() {
   return (
@@ -21,6 +24,15 @@ function App() {
           </Route>
           <Route exact path="/create">
             <Create />
+          </Route>
+          <Route exact path="/inventory">
+            <Inventory />
+          </Route>
+          <Route exact path="/addItems">
+            <AddItem />
+          </Route>
+          <Route exact path="/inventory/:id">
+            <ItemDetail />
           </Route>
           <Route>
             <NoMatch />

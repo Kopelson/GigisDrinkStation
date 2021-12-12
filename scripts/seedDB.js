@@ -5,8 +5,49 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/drinkslist"
+  "mongodb://localhost/drinkslist", 
+  { useUnifiedTopology: true,
+    useNewUrlParser: true }  
 );
+
+const inventorySeed = [
+  {
+    name: "coke",
+    quantity: 24
+  },
+  {
+    name: "diet coke",
+    quantity: 12
+  },
+  {
+    name: "mountain dew",
+    quantity: 0
+  },
+  {
+    name: "raspberry soda",
+    quantity: 32
+  },
+  {
+    name: "cream soda",
+    quantity: 14
+  },
+  {
+    name: "huckleberry",
+    quantity: 3
+  },
+  {
+    name: "root beer",
+    quantity: 6
+  },
+  {
+    name: "peach",
+    quantity: 2
+  },
+  {
+    name: "butterscotch",
+    quantity: 1
+  }
+]
 
 const drinkSeed = [
   {
@@ -469,8 +510,20 @@ const drinkSeed = [
   }
 ];
 
+db.Inventory
+  .deleteMany({})
+  .then(() => db.Inventory.collection.insertMany(inventorySeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
 db.Drink
-  .remove({})
+  .deleteMany({})
   .then(() => db.Drink.collection.insertMany(drinkSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");

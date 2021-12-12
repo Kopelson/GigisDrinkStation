@@ -15,6 +15,11 @@ function Header() {
        to={"/create"}>
           <i className="far fa-plus-square"></i>
       </Link>
+      <Link 
+      style={{color: "#544d71", fontSize: "2em", position:"absolute", top:"5px", left:"25px"}}
+       to={"/inventory"}>
+          <i className="fas fa-wine-bottle"></i>
+      </Link>
     </div>
     
   );

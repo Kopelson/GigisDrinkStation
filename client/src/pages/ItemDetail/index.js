@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
 import { Link, useParams, useHistory } from "react-router-dom";
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Jumbotron from '../../components/Jumbotron';
 import Button from "../../components/Button";
 import API from "../../utils/API";
 
-function Detail() {
+function ItemDetail() {
   const [formObject, setFormObject] = useState({
-    title: "",
-    author: "",
-    ingredients: ""
+    name: "",
+    quantity: ""
   });
   const {id} = useParams()
   const history = useHistory();
@@ -19,7 +17,7 @@ function Detail() {
     let componentMounted = true;
       const fetchData = async () => {
        //you async action is here
-        API.getDrink(id).then((response) => {
+        API.getInventoryItem(id).then((response) => {
           if(componentMounted) {
             setFormObject(response?.data);
           }
@@ -38,53 +36,46 @@ function Detail() {
 
   function handleFormSubmit(event) {
     event.preventDefault()
-      if (formObject.title && formObject.author) {
-        API.updateDrink(id, {
-          title: formObject.title,
-          author: formObject.author,
-          ingredients: formObject.ingredients
+      if (formObject.name && formObject.quantity) {
+        API.updateInventory(id, {
+          name: formObject.name,
+          quantity: formObject.quantity
         })
-        .then(history.push(`/`))
+        .then(history.push(`/inventory`))
         .catch(err => console.log(err));
       };
   };
 
   function handleDelete(){
-    API.deleteDrink(id)
-    .then(history.push(`/`))
+    API.deleteInventory(id)
+    .then(history.push(`/inventory`))
     .catch(err => console.log(err))
   }
 
   return (
       <div>
         <Jumbotron
-          title="Drink Details"
+          title="Item Details"
         >
         </Jumbotron>
         <div className="col-12 form">
           <input 
             className="form-control"
             onChange={handleInputChange}
-            id="title"
-            value={formObject.title}
+            id="name"
+            value={formObject.name}
             required
           />
           
           <input 
             className="form-control"
             onChange={handleInputChange}
-            id="author"
-            value={formObject.author}
+            id="quantity"
+            value={formObject.quantity}
             required
           />
-             
-          <textarea className="form-control" rows="5"
-            onChange={handleInputChange}
-            id="ingredients"
-            value={formObject.ingredients}
-          />
             <Button
-              disabled={!(formObject.author && formObject.title) && formObject.ingredients}
+              disabled={!(formObject.name && formObject.quantity)}
               onClick={handleFormSubmit}
               style={{width:"50%"}}
             >
@@ -110,4 +101,4 @@ function Detail() {
   }
 
 
-export default Detail;
+export default ItemDetail;
