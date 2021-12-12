@@ -88,11 +88,11 @@ function ItemDetail() {
             >
               <i className="far fa-trash-alt"></i> 
             </Button>
-            <Link to="/">
+            <Link to="/inventory">
               <Button
                 style={{width:"100%"}}
               >
-                ← Back to Drink Station
+                ← Back to Inventory
               </Button>
             </Link>
         </div>  

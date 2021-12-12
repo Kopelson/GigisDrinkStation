@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/inventory">
             <Inventory />
           </Route>
-          <Route exact path="/addItems">
+          <Route exact path="/addItem">
             <AddItem />
           </Route>
           <Route exact path="/inventory/:id">

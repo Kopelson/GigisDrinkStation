@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './style.css';
 import Jumbotron from '../../components/Jumbotron';
 import SearchBar from '../../components/SearchBar';
+import Button from "../../components/Button";
 import { List, ListItem } from '../../components/List';
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -65,13 +66,23 @@ function Inventory() {
   }
 
   return (
-    <div>
+    <div id="top-inventory">
       <Jumbotron
         title='Inventory: '
         iconClass='col-12 fas fa-cart-plus'
         icon='⬅ Add Items Here!'
+        link="/addItem"
       >
       </Jumbotron>
+      <div className='col-12' >
+        <Link to="/">
+          <Button
+            style={{width:"100%"}}
+          >
+            ← Back to Drink Station
+          </Button>
+        </Link>
+      </div>
       <SearchBar
         value={search.value}
         handleChange={handleChange}
@@ -111,6 +122,15 @@ function Inventory() {
               >
               </Jumbotron>
             )}
+            <div className='col-12' style={{marginBottom: "50px"}}>
+              <a href="#top-inventory">
+                <Button
+                  style={{width:"100%"}}
+                >
+                  ↑ Back to Top ↑
+                </Button>
+              </a>
+            </div>
     </div>
   );
 }

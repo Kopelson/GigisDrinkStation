@@ -56,11 +56,11 @@ function AddItems() {
               <i className="far fa-save"></i>
               </Button>
               
-              <Link to="/">
+              <Link to="/inventory">
               <Button
                 style={{width:"100%",fontSize:"24px"}}
               >
-                ← Back to Drink Station
+                ← Back to Inventory
               </Button>
               </Link>
           </div>

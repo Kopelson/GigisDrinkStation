@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import './style.css';
 import Jumbotron from '../../components/Jumbotron';
 import SearchBar from '../../components/SearchBar';
+import Button from "../../components/Button";
 import { List, ListItem } from '../../components/List';
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -54,11 +55,24 @@ function Drinks() {
   }
 
   return (
-    <div>
+    <div id="top">
       <Jumbotron
-        title="Drinks"
+        title="Drinks: "
+        iconClass='col-12 fas fa-plus-square'
+        icon='⬅ Create a new Drink Here!'
+        link= "/create"
       >
       </Jumbotron>
+
+      <div className='col-12' >
+        <Link to="/inventory">
+          <Button
+            style={{width:"100%"}}
+          >
+            ← to Inventory
+          </Button>
+        </Link>
+      </div>
       
       <SearchBar
         value={search.value}
@@ -90,6 +104,15 @@ function Drinks() {
               >
               </Jumbotron>
             )}
+            <div className='col-12' style={{marginBottom: "50px"}}>
+              <a href="#top">
+                <Button
+                  style={{width:"100%"}}
+                >
+                  ↑ Back to top ↑
+                </Button>
+              </a>
+            </div>
     </div>
   );
 }
