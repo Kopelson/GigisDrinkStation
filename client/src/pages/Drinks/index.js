@@ -40,7 +40,7 @@ function Drinks() {
 
   function handleClick(event){
     event.preventDefault();
-    let list = event.target.parentElement.parentElement.parentElement.childNodes[2];
+    let list = event.currentTarget.parentElement.childNodes[2];
     if(list.classList.contains("hide")){
       list.classList.remove("hide");
       return
@@ -190,9 +190,9 @@ function Drinks() {
         <List>
           {filteredDrinksArray.map(obj => (
             <ListItem key={obj.name}>
-            <div className='list-dropdown'>
+            <div className='list-dropdown' onClick={handleClick}>
               <h1>{obj.name}</h1>
-              <h1 onClick={handleClick}><i className="fas fa-angle-double-down"></i></h1>
+              <h1><i className="fas fa-angle-double-down"></i></h1>
             </div>
             <hr/>
           {obj.array.length ? (
