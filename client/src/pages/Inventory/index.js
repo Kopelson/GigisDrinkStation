@@ -93,6 +93,7 @@ function Inventory() {
           <h2>Name</h2><h2>Quantity</h2>
       </div>
       {tableResults.length ? (
+        <div className='col-12'>
               <List>
                 {tableResults.map(item => (
                   <ListItem key={item._id}>
@@ -116,6 +117,7 @@ function Inventory() {
                   </ListItem>
                 ))}
               </List>
+            </div>
             ) : (
               <Jumbotron
                 title="Nothing to Display"
