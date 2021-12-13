@@ -83,7 +83,7 @@ function Drinks() {
   let filteredDrinksArray = [
     {
       name: "All",
-      array: tableResults
+      array: drinks
     },
     {
       name: "Coke",
