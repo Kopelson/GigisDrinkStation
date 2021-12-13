@@ -119,6 +119,7 @@ function Inventory() {
             ) : (
               <Jumbotron
                 title="Nothing to Display"
+                link=""
               >
               </Jumbotron>
             )}

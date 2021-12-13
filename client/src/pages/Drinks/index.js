@@ -38,7 +38,20 @@ function Drinks() {
     setSearch({value: ""});
   }
 
-  //This sets filters the results array
+  function handleClick(event){
+    event.preventDefault();
+    let list = event.target.parentElement.parentElement.parentElement.childNodes[2];
+    if(list.classList.contains("hide")){
+      list.classList.remove("hide");
+      return
+    }
+    if(!list.classList.contains("hide")){
+      list.classList.add("hide");
+      return
+    }
+  }
+
+  //This sets filters on the results array
   let searchBarFilter = drinks.filter(drink => 
     drink.title.toLowerCase().indexOf(search.value.toLowerCase()) !== -1
     || 
@@ -49,9 +62,83 @@ function Drinks() {
   let tableResults;
   //Check if need to filter the results array or not
   if(search.value === ""){
-    tableResults = drinks;
+    tableResults = [];
   } else {
     tableResults = searchBarFilter;
+  }
+
+  let coke = filterByDrink('coke');
+  let creamSoda = filterByDrink('cream soda');
+  let dpPepper = filterByDrink('dr. pepper');
+  let eggNog = filterByDrink('eggnog');
+  let gingerAle = filterByDrink('ginger ale');
+  let grape = filterByDrink('grape');
+  let pepsi = filterByDrink('pepsi');
+  let raspberry = filterByDrink('raspberry');
+  let rootBeer = filterByDrink('root');
+  let sprite = filterByDrink('sprite');
+  let squirt = filterByDrink('squirt');
+  let mtDew = filterByDrink('mt. dew');
+
+  let filteredDrinksArray = [
+    {
+      name: "All",
+      array: tableResults
+    },
+    {
+      name: "Coke",
+      array: coke
+    },
+    {
+      name: "Cream Soda",
+      array: creamSoda
+    },
+    {
+      name: "Dr. Pepper",
+      array: dpPepper
+    },
+    {
+      name: "Eggnog",
+      array: eggNog
+    },
+    {
+      name: "Ginger Ale",
+      array: gingerAle
+    },
+    {
+      name: "Grape",
+      array: grape
+    },
+    {
+      name: "Pepsi",
+      array: pepsi
+    },
+    {
+      name: "Raspberry",
+      array: raspberry
+    },
+    {
+      name: "Root Beer",
+      array: rootBeer
+    },
+    {
+      name: "Sprite",
+      array: sprite
+    },
+    {
+      name: "Squirt",
+      array: squirt
+    },
+    {
+      name: "Mt. Dew",
+      array: mtDew
+    }
+  ];
+    
+  
+  function filterByDrink(soda){
+    let result = drinks.filter(drink => drink.ingredients.toLowerCase().indexOf(soda.toLowerCase()) !== -1)
+    return result;
   }
 
   return (
@@ -80,6 +167,7 @@ function Drinks() {
         handleSubmit={handleSubmit}
         placeholder="Find a Drink!"
       ></SearchBar>
+      <div className='col-12'>
       {tableResults.length ? (
               <List>
                 {tableResults.map(drink => (
@@ -99,20 +187,51 @@ function Drinks() {
                 ))}
               </List>
             ) : (
-              <Jumbotron
-                title="Nothing to Display"
-              >
-              </Jumbotron>
-            )}
-            <div className='col-12' style={{marginBottom: "50px"}}>
-              <a href="#top">
-                <Button
-                  style={{width:"100%"}}
-                >
-                  ↑ Back to top ↑
-                </Button>
-              </a>
+        <List>
+          {filteredDrinksArray.map(obj => (
+            <ListItem key={obj.name}>
+            <div className='list-dropdown'>
+              <h1>{obj.name}</h1>
+              <h1 onClick={handleClick}><i className="fas fa-angle-double-down"></i></h1>
             </div>
+            <hr/>
+          {obj.array.length ? (
+            <div className='hide'>
+              <List>
+                {obj.array.map(drink => (
+                  <ListItem key={drink._id}>
+                    <Link to={"/drinks/" + drink._id}
+                      title={drink.title}
+                      author={drink.author}
+                      ingredients={drink.ingredients}
+                    >
+                      <h1>
+                        {drink.title} 
+                      </h1>
+                      <p>by {drink.author}</p>
+                      <p className="ingredients">({drink.ingredients})</p>
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            </div>
+          ) : (
+            <p className='hide'>NA</p>
+          )}
+          </ListItem>
+          ))}
+        </List>
+        )}
+      </div>
+      <div className='col-12' style={{marginBottom: "50px"}}>
+        <a href="#top">
+          <Button
+            style={{width:"100%"}}
+          >
+            ↑ Back to top ↑
+          </Button>
+        </a>
+      </div>
     </div>
   );
 }

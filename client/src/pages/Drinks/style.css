@@ -13,3 +13,12 @@ p.ingredients {
     font-size: medium;
     font-weight: 300;
 }
+
+.list-dropdown{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hide{
+    display:none;
+}

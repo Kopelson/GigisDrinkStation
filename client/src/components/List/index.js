@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-export function List({ children }) {
+export function List({children}) {
     return (
-      <div className="col-12">
+      <div>
         <ul>{children}</ul>
       </div>
     );
