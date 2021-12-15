@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 import Inventory from "./pages/Inventory";
 import AddItem from "./pages/AddItems";
 import ItemDetail from "./pages/ItemDetail";
+import Recipes from "./pages/Recipes";
+import AddRecipe from "./pages/AddRecipes";
+import RecipeDetail from "./pages/RecipeDetail";
 
 function App() {
   return (
@@ -33,6 +36,15 @@ function App() {
           </Route>
           <Route exact path="/inventory/:id">
             <ItemDetail />
+          </Route>
+          <Route exact path="/recipes">
+            <Recipes />
+          </Route>
+          <Route exact path="/addRecipes">
+            <AddRecipe />
+          </Route>
+          <Route exact path="/recipes/:id">
+            <RecipeDetail />
           </Route>
           <Route>
             <NoMatch />

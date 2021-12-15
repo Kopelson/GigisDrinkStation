@@ -150,16 +150,6 @@ function Drinks() {
         link= "/create"
       >
       </Jumbotron>
-
-      <div className='col-12' >
-        <Link to="/inventory">
-          <Button
-            style={{width:"100%"}}
-          >
-            ← to Inventory
-          </Button>
-        </Link>
-      </div>
       
       <SearchBar
         value={search.value}

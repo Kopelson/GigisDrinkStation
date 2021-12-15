@@ -10,6 +10,146 @@ mongoose.connect(
     useNewUrlParser: true }  
 );
 
+const recipeSeed = [
+  {
+    title: "Simple Syrup",
+    author: "Gwendalyn",
+    recipe:
+      "Preparation: In a high-sided saucepan over medium-high heat, bring cold water and sugar to a boil. Turn the heat to low and stir constantly until the sugar dissolves completely and the mixture is clear, approximately 3 to 5 minutes. Remember – the longer you boil it, the thicker the syrup will be when cooled.",
+    date: new Date(Date.now())
+  },
+  {
+    title: "CHOCOLATE CHIP COOKIE",
+    author: "Gwendalyn",
+    recipe:
+      `MAKE THE CHOCOLATE CHIP COOKIE DOUGH
+      The first step in making these easy chocolate chip cookies to to combine the dry ingredients in a medium size bowl.
+      
+      When doing this, make sure to Measure the flour correctly. Be sure to use a measuring cup made for dry ingredients (NOT a pyrex liquid measuring cup). Then, measure flour by scooping it into a measuring cup and leveling it with a knife.
+      
+      two photos showing How to make chocolate chip cookies - mixing dry ingredients 
+      
+      Next, cream together butter and sugars, make sure to soften the butter early by taking it out of the fridge at least two hours before baking so it's ready to go when you need it. You can also warm it in the microwave for about 7 seconds, but be very careful not to melt it.
+      
+      Once butter/sugar mixture is beaten well, add the eggs & vanilla and beat to combine.
+      
+      two photos showing How to make chocolate chip cookies - combining butter and sugar, adding eggs & vanilla 
+      
+      
+      Add dry ingredients and stir until just combined. Then add the chocolate chips and beat until they are evenly distributed throughout the dough.
+      
+      Use LOTS of chocolate chips. You want at least two gooey chocolate chips in every bite.
+      
+      two photos showing How to make chocolate chip cookies, adding dry ingredients and chocolate chips 
+      
+      
+      The chocolate chip cookie dough should be easy to roll and not sticky. It should not be dry or crumbly. See photo below for the optimal texture.
+      
+      overhead photo of a bowl of chocolate chip cookie dough 
+      
+      
+      PORTION & ROLL DOUGH
+      Once the cookie dough is finished, it's time to portion and roll the dough. I know many people eyeball it when making cookies, however I highly recommend using a cookie scoop.
+      
+      Using a cooking scoop ensures that all the cookies are uniform in size so that they bake evenly. I love this stainless steel cookie scoop and use it every time I make cookies.
+      
+      
+      
+      
+      At this point you can either bake your dough or freeze it.
+      
+      photo showing How to Make Chocolate Chip Cookies - portioning cookie dough with a cookie scoop 
+      
+      
+      TO FREEZE COOKIE DOUGH:
+      Since this chocolate chip cookie recipe makes so many cookies, I always make a full batch and freeze some. That way I have dough on hand for unexpected guests or whenever the cookie craving strikes.
+      
+      I prefer to flash-freeze the cookie dough before putting it in an airtight container. To do this, roll the cookie dough into balls and space them out on a parchment lined baking sheet. Then put the baking sheet in the freezer for about 30 minutes, or until the dough slightly freezes.
+      
+      Once the dough is slightly frozen, transfer the cookie dough balls to an airtight container or plastic bag and freeze for up to 2 months.
+      
+      HOW TO BAKE FROZEN DOUGH
+      There are two ways to bake frozen dough:
+      
+      Thaw it first: I love having dough ready to go in the freezer for impromptu guests. When you want to bake them, remove the dough balls from the freezer, set them on a parchment-lined baking sheet and cover with a light cloth towel or napkin to let them thaw. Then, once they reach room temperature (after about 1-2 hours depending on the temperature of your kitchen) bake as directed in the recipe (at 375 degrees F). SO easy!
+      Bake from frozen: Place the dough on a parchment lined baking sheet. Then, preheat the oven to 350 degrees Fahrenheit (ONLY if you are baking the frozen dough) and put the cookies in the oven in the beginning of the preheating time. (So put the cookies in the oven as you preheat it). Set the timer for 15 minutes and remove the cookies after 15 minutes. The top will look a little more brown than usual, but they will still taste amazing.
+      
+      
+      two overhead photos showing How to Freeze Chocolate Chip Cookie Dough - left shows dough flash-frozen on a pan, right shows dough in a plastic bag 
+      BAKE UNTIL THEY JUST BARELY LOOK DONE
+      If you are baking the cookies immediately simply roll them into balls, place them evenly apart on a baking sheet (about 1.5 to 2 inches apart) and bake at 375 degrees for 8-10 minutes.
+      
+      
+      
+      The most important piece of advice I can give you is - DO NOT over-bake these chocolate chip cookies! They will not look done when you pull them out of the oven, and that is GOOD.
+      
+      At the end of the baking time, these chocolate chip cookies won't look done but they are. They will look a little doughy when you remove them from the oven, and thats good. They may be lightly browned in a few places, which is exactly how you want them.
+      
+      They will set up as they sit on the cookie sheet for a few minutes. I never bake them for more than 9 minutes
+      
+      two photos showing How to Make Chocolate Chip Cookies before and after baking on a baking sheet  
+      
+      
+      COOL
+      Cool the chocolate chip cookies on the baking sheet for 5 minutes before removing to a wire rack to cool completely (or just eat them warm while the chocolate chips are melty)!
+      
+      STORE
+      Store these chocolate chip cookies in an airtight container at room temperature for up to 5 days, or in the freezer for up to 2 months.
+      
+      front view of chocolate chip cookies cooling on a copper wire cooling rack 
+      
+      FAQS ABOUT CHOCOLATE CHIP COOKIES
+      How do you make gooey chocolate chip cookies? 
+      The trick to making this best chocolate chip cookie recipe gooey is to not over-bake them.
+      
+      Why do cookies spread & flatten?
+      There are a few main reasons for this that I have found in my experience:
+      1) Expired leavening agents. If your baking soda or baking powder are past their prime, your chocolate chip cookies will likely flatten and spread. Even if the date on the container checks out, it still might not be good. That would be the first place I would start.
+      How to test if your baking soda is active: Combine ½ cup of hot water, ¼ teaspoon vinegar and ¼ tsp of baking soda. When you add the baking soda a reaction should take place immediately. If not, then you need new baking soda.
+      How to test if your baking powder is active: Add  ½ tsp of baking powder to ½ cup of hot water. It should bubble immediately. A reaction should take place immediately. If not, then you need new baking powder.
+      2) Over-mixing. If you over-mix the ingredients in this best chocolate chip cookie recipe you may end up with flat cookies.
+      3) Ingredients are too warm. Sometimes over-mixing can also lead to your ingredients becoming too warm. If you notice this happening, you can chill the dough before baking to return the batter to room temperature.
+      4) Incorrect oven temperature. I recommend baking with an electric convection oven. If your cookies and other baked goods are not turning out properly, invest in a cheap oven thermometer to check the temperature. If your oven is baking too hot or too cold, then the cookies will not turn out well.
+      
+      Why didn't my cookies flatten? 
+      If your cookies didn't flatten, here are a few things that could've been the problem. I have never had this happen to me in 10 years, so here are my educated guesses...
+      1) The ingredients/cookie dough was too cold. Cold dough doesn't spread as well as room temperature dough.
+      2) You accidentally used too much flour. Be sure to use a measuring cup made for dry ingredients (not a pyrex liquid measuring cup), and measure the flour correctly by scooping and leveling.
+      3) The oven temperature is incorrect. I recommend using an oven thermometer to check the temperature of your oven (it's only $7), because it can often be different than the reading it gives on the display or what the dial is set at.
+      4) The butter/sugar mixture wasn't fully creamed. Try creaming the butter and sugar together for longer.
+      
+      Can you bake chocolate chip cookie dough from frozen? 
+      I have tested baking this recipe from frozen more times than I can even count. I have gotten the best results when I place the dough on a parchment lined baking sheet.
+      Then, preheat the oven to 350 degrees Fahrenheit (ONLY if you are baking the frozen dough) and put the cookies in the oven in the beginning of the preheating time. Set the timer for 15 minutes and remove the cookies after 15 minutes. The top will look a little more brown than usual, but they will still taste amazing.`,
+    date: new Date(Date.now())
+  },
+  {
+    title: "Flavored Syrup",
+    author: "Gwendalyn",
+    recipe:
+      `Basic Simple Syrup
+      1 cup Sugar
+      1 cup Water
+      Blueberry Lemon
+      1 cup fresh or frozen Blueberries
+      Juice of 1 Lemon
+      Raspberry Lime
+      1 cup fresh or frozen Raspberries
+      Juice of 1 Lime
+      Ginger Beer
+      1/4 cup sliced or grated fresh Ginger
+      Juice of 2 - 3 Lemons (1/4 cup)
+      Sprigs of fresh Mint, optional or to garnish
+      Mint
+      Handful of fresh Mint
+      Vanilla
+      1 Vanilla pod or 1 tsp. Vanilla extract or paste
+      Lime
+      Juice of 3 Limes`,
+    date: new Date(Date.now())
+  }
+]
+
 const inventorySeed = [
   {
     name: "coke",
@@ -509,6 +649,18 @@ const drinkSeed = [
     date: new Date(Date.now())
   }
 ];
+
+db.Recipe
+.deleteMany({})
+.then(()=> db.Recipe.collection.insertMany(recipeSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+  process.exit(0);
+})
+.catch(err => {
+  console.error(err);
+  process.exit(1);
+});
 
 db.Inventory
   .deleteMany({})

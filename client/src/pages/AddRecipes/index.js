@@ -10,7 +10,7 @@ function Create() {
   const [formObject, setFormObject] = useState({
     title: "",
     author: "",
-    ingredients: ""
+    recipe: ""
   });
   const history = useHistory();
 
@@ -22,12 +22,12 @@ function Create() {
   function handleFormSubmit(event) {
     event.preventDefault()
       if (formObject.title && formObject.author) {
-        API.saveDrink({
+        API.saveRecipe({
           title: formObject.title,
           author: formObject.author,
-          ingredients: formObject.ingredients
+          recipe: formObject.recipe
         })
-        .then(history.push(`/`))
+        .then(history.push(`/recipes`))
         .catch(err => console.log(err));
       };
   };
@@ -35,41 +35,40 @@ function Create() {
     return (
      <div>
        <Jumbotron
-          title="Add Drink"
+          title="Add Recipe"
         >
         </Jumbotron>
         <div className="col-12 form">
               <Input
                 onChange={handleInputChange}
                 name="title"
-                placeholder="Title of Drink"
+                placeholder="Title of Recipe"
                
               />
               <Input
                 onChange={handleInputChange}
                 name="author"
                 placeholder="Name of Author"
-              value={formObject.author}
               />
               <TextArea
                 onChange={handleInputChange}
-                name="ingredients"
-                placeholder="Ingredients"
+                name="recipe"
+                placeholder="Recipe"
                 
               />
               <Button
-                disabled={!(formObject.author && formObject.title) && formObject.ingredients}
+                disabled={!(formObject.author && formObject.title) && formObject.recipe}
                 onClick={handleFormSubmit}
                 style={{width:"100%", fontSize:"24px"}}
               >
               <i className="far fa-save"></i>
               </Button>
               
-              <Link to="/">
+              <Link to="/recipes">
               <Button
                 style={{width:"100%",fontSize:"24px"}}
               >
-                ← Back to Drink Station
+                ← Back to Recipes
               </Button>
               </Link>
           </div>

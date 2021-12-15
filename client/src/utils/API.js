@@ -34,11 +34,31 @@ export default {
     return axios.delete("/api/inventory/" + id);
   },
   // Saves a drink to the database
-  saveInventory: function(drinkData) {
-    return axios.post("/api/inventory", drinkData);
+  saveInventory: function(inventoryData) {
+    return axios.post("/api/inventory", inventoryData);
   },
   // Updates a drink by id
-  updateInventory: function (id, drinkData) {
-    return axios.put("/api/inventory/" + id, drinkData);
+  updateInventory: function (id, inventoryData) {
+    return axios.put("/api/inventory/" + id, inventoryData);
+  },
+   // Gets all inventory
+   getRecipes: function() {
+    return axios.get("/api/recipes");
+  },
+  // Gets the drink with the given id
+  getRecipe: function(id) {
+    return axios.get("/api/recipes/" + id);
+  },
+  // Deletes the drink with the given id
+  deleteRecipe: function(id) {
+    return axios.delete("/api/recipes/" + id);
+  },
+  // Saves a drink to the database
+  saveRecipe: function(recipeData) {
+    return axios.post("/api/recipes", recipeData);
+  },
+  // Updates a drink by id
+  updateRecipe: function (id, recipeData) {
+    return axios.put("/api/recipes/" + id, recipeData);
   },
 };
