@@ -69,16 +69,16 @@ function Drinks() {
 
   let coke = filterByDrink('coke');
   let creamSoda = filterByDrink('cream soda');
-  let dpPepper = filterByDrink('dr. pepper');
+  let dpPepper = filterByDrink('pepper');
   let eggNog = filterByDrink('eggnog');
-  let gingerAle = filterByDrink('ginger ale');
+  let gingerAle = filterByDrink('ginger');
   let grape = filterByDrink('grape');
   let pepsi = filterByDrink('pepsi');
   let raspberry = filterByDrink('raspberry');
   let rootBeer = filterByDrink('root');
   let sprite = filterByDrink('sprite');
   let squirt = filterByDrink('squirt');
-  let mtDew = filterByDrink('mt. dew');
+  let mtDew = filterByDrink('dew');
 
   let filteredDrinksArray = [
     {
