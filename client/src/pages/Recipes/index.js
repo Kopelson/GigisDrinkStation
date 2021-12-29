@@ -36,13 +36,26 @@ function Recipes() {
     setSearch({value: ""});
   }
 
+  //sort recipes - https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+  function compare( a, b ) {
+    if ( a.title < b.title){
+      return -1;
+    }
+    if ( a.title > b.title){
+      return 1;
+    }
+    return 0;
+  }
+
+  let sortedRecipes = recipes.sort( compare );
+
   //This sets filters the results array
-  let searchBarFilter = recipes.filter(item => item.title.toLowerCase().indexOf(search.value.toLowerCase()) !== -1);
+  let searchBarFilter = sortedRecipes.filter(item => item.title.toLowerCase().indexOf(search.value.toLowerCase()) !== -1);
   //Initialize tableResults variable    
   let tableResults;
   //Check if need to filter the results array or not
   if(search.value === ""){
-    tableResults = recipes;
+    tableResults = sortedRecipes;
   } else {
     tableResults = searchBarFilter;
   }

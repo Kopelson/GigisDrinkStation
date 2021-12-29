@@ -87,7 +87,7 @@ function Drinks() {
   let gingerAle = filterByDrink('ginger');
   let grape = filterByDrink('grape');
   let pepsi = filterByDrink('pepsi');
-  let raspberry = filterByDrink('raspberry');
+  let raspberry = filterByDrink('raspberry cream');
   let rootBeer = filterByDrink('root');
   let sprite = filterByDrink('sprite');
   let squirt = filterByDrink('squirt');
@@ -127,7 +127,7 @@ function Drinks() {
       array: pepsi
     },
     {
-      name: "Raspberry",
+      name: "Raspberry Cream",
       array: raspberry
     },
     {

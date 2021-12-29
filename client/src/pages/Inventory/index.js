@@ -54,13 +54,26 @@ function Inventory() {
       }
   }
 
+  //sort inventory - https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+  function compare( a, b ) {
+    if ( a.name < b.name){
+      return -1;
+    }
+    if ( a.name > b.name){
+      return 1;
+    }
+    return 0;
+  }
+
+  let sortedInventory = inventory.sort( compare );
+
   //This sets filters the results array
-  let searchBarFilter = inventory.filter(item => item.name.toLowerCase().indexOf(search.value.toLowerCase()) !== -1);
+  let searchBarFilter = sortedInventory.filter(item => item.name.toLowerCase().indexOf(search.value.toLowerCase()) !== -1);
   //Initialize tableResults variable    
   let tableResults;
   //Check if need to filter the results array or not
   if(search.value === ""){
-    tableResults = inventory;
+    tableResults = sortedInventory;
   } else {
     tableResults = searchBarFilter;
   }
