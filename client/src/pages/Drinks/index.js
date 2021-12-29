@@ -51,8 +51,21 @@ function Drinks() {
     }
   }
 
+  //sort drinks - https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+  function compare( a, b ) {
+    if ( a.title < b.title){
+      return -1;
+    }
+    if ( a.title > b.title){
+      return 1;
+    }
+    return 0;
+  }
+  
+  let sortedDrinks = drinks.sort( compare );
+
   //This sets filters on the results array
-  let searchBarFilter = drinks.filter(drink => 
+  let searchBarFilter = sortedDrinks.filter(drink => 
     drink.title.toLowerCase().indexOf(search.value.toLowerCase()) !== -1
     || 
     drink.author.toLowerCase().indexOf(search.value.toLowerCase()) !== -1
@@ -83,7 +96,7 @@ function Drinks() {
   let filteredDrinksArray = [
     {
       name: "All",
-      array: drinks
+      array: sortedDrinks
     },
     {
       name: "Coke",
